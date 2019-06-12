@@ -19,8 +19,20 @@ export class KegComponent {
   newBeer = null;
 
  addKeg(newKeg, newBrand, newPrice, newAlcohol){
+  //  if(this.kegs.length ) {
+  let length = this.kegs.length;
+  //  }
+  //  this.kegs.splice(this.keg,1)
   let newLager = new Keg(newKeg, newBrand, newPrice, newAlcohol);
   this.newBeer =  this.kegs.push(newLager);
+  
+  if(this.newBeer <= length+1){
+    this.kegs.splice((this.newBeer-length-1),1);
+    console.log(this.kegs);
+    
+  }
+  console.log(this.kegs);
+  
    this.clearBeer();
  }
 
@@ -31,7 +43,13 @@ export class KegComponent {
 
  showInfo(clickedBeer) {
    this.selectedKeg = clickedBeer;
+   console.log(this);
+   
  }
+
+//  deleteBeer(keg) {
+//    let beer = this.
+//  }
  
 
 
