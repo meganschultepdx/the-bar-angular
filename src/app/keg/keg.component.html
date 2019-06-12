@@ -1,0 +1,11 @@
+<!-- <form>
+  <label>Name: </label>
+  <input type="text" ng-model='name'/>
+  <button (click)="addKeg(name)">Done!</button>
+</form> -->
+
+<h2 *ngFor="let currentKeg of kegs">{{currentKeg.name}}</h2>
+<form>
+  <label for="name">Enter Name: </label>
+  <input type="text" [(ngModel)]="selectedKeg">{{selectedKeg}}
+</form>
